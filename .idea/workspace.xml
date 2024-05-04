@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fd9375-fbb5-4bfa-8550-e86bd8e9080d" name="Changes" comment="Reading data from csv files">
+    <list default="true" id="a4fd9375-fbb5-4bfa-8550-e86bd8e9080d" name="Changes" comment="Main Recommend Function&#10;&#10;1. Extracting movie index from new_df using title provided by user.&#10;2. Extracting distances of given movie with all other movies from similarity &amp; storing in variable 'distances'.&#10;3. Applying enumerate on distances to create (index, distance) tuple in order to hold the index position of movies after sorting the distances in reverse order.&#10;4. Sorting the list of enumerated distances in reverse &amp; extracting top 5 distances along with their movie_index in new_df.&#10;5. Extracting titles of movies from new_df using movie_index extracted in previous step.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie_recommender.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_recommender.py" afterDir="false" />
     </list>
@@ -46,6 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.movie_recommender.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "settings.editor.selected.configurable": "preferences.pluginManager"
@@ -80,7 +81,79 @@
       <option name="project" value="LOCAL" />
       <updated>1714826566028</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merged 2 datasets">
+      <option name="closed" value="true" />
+      <created>1714827050393</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714827050393</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removed data columns that don't go with our need of content based recommender system. This data won't help in making tags for movies">
+      <option name="closed" value="true" />
+      <created>1714827500589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714827500589</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Extracted keywords from genres &amp; keywords columns">
+      <option name="closed" value="true" />
+      <created>1714830870499</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714830870499</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Extracting top 3 cast members from cast column">
+      <option name="closed" value="true" />
+      <created>1714831184810</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714831184810</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Extracting Director from crew column">
+      <option name="closed" value="true" />
+      <created>1714831360350</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714831360350</updated>
+    </task>
+    <task id="LOCAL-00007" summary="creating new data frame with 3 data columns namely -&gt; movie_id, title, tags">
+      <option name="closed" value="true" />
+      <created>1714832060543</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714832060543</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Applying Stemming on tags data using PorterStemmer from nltk library">
+      <option name="closed" value="true" />
+      <created>1714832391602</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714832391602</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Data Vectorization&#10;&#10;1. Making vectors of movies from tags. &#10;2. Using CountVectorizer from scikit learn to perform text vectorization using Bag of Words.&#10;3. Using cosine similarity to find similarity of every movie vector with every other movie vector and storing it in variable 'similarity'.">
+      <option name="closed" value="true" />
+      <created>1714833059118</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714833059118</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Main Recommend Function&#10;&#10;1. Extracting movie index from new_df using title provided by user.&#10;2. Extracting distances of given movie with all other movies from similarity &amp; storing in variable 'distances'.&#10;3. Applying enumerate on distances to create (index, distance) tuple in order to hold the index position of movies after sorting the distances in reverse order.&#10;4. Sorting the list of enumerated distances in reverse &amp; extracting top 5 distances along with their movie_index in new_df.&#10;5. Extracting titles of movies from new_df using movie_index extracted in previous step.">
+      <option name="closed" value="true" />
+      <created>1714834365395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714834365395</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +169,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reading data from csv files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reading data from csv files" />
+    <MESSAGE value="Merged 2 datasets" />
+    <MESSAGE value="Removed data columns that don't go with our need of content based recommender system. This data won't help in making tags for movies" />
+    <MESSAGE value="Extracted keywords from genres &amp; keywords columns" />
+    <MESSAGE value="Extracting top 3 cast members from cast column" />
+    <MESSAGE value="Extracting Director from crew column" />
+    <MESSAGE value="creating new data frame with 3 data columns namely -&gt; movie_id, title, tags" />
+    <MESSAGE value="Applying Stemming on tags data using PorterStemmer from nltk library" />
+    <MESSAGE value="Data Vectorization&#10;&#10;1. Making vectors of movies from tags. &#10;2. Using CountVectorizer from scikit learn to perform text vectorization using Bag of Words.&#10;3. Using cosine similarity to find similarity of every movie vector with every other movie vector and storing it in variable 'similarity'." />
+    <MESSAGE value="Main Recommend Function&#10;&#10;1. Extracting movie index from new_df using title provided by user.&#10;2. Extracting distances of given movie with all other movies from similarity &amp; storing in variable 'distances'.&#10;3. Applying enumerate on distances to create (index, distance) tuple in order to hold the index position of movies after sorting the distances in reverse order.&#10;4. Sorting the list of enumerated distances in reverse &amp; extracting top 5 distances along with their movie_index in new_df.&#10;5. Extracting titles of movies from new_df using movie_index extracted in previous step." />
+    <option name="LAST_COMMIT_MESSAGE" value="Main Recommend Function&#10;&#10;1. Extracting movie index from new_df using title provided by user.&#10;2. Extracting distances of given movie with all other movies from similarity &amp; storing in variable 'distances'.&#10;3. Applying enumerate on distances to create (index, distance) tuple in order to hold the index position of movies after sorting the distances in reverse order.&#10;4. Sorting the list of enumerated distances in reverse &amp; extracting top 5 distances along with their movie_index in new_df.&#10;5. Extracting titles of movies from new_df using movie_index extracted in previous step." />
   </component>
 </project>
