@@ -48,3 +48,26 @@ def fetch_director(obj):
 
 
 movies['crew'] = movies['crew'].apply(fetch_director)
+
+movies['overview'] = movies['overview'].apply(lambda x:x.split())       # Converting Overview from string to list
+
+
+# Removing Spaces from between the words which should be a single tag. For eg: "Sam Worthington" -> "SamWorthington" & "Sam Mendes" -> "SamMendes"
+movies['genres'] = movies['genres'].apply(lambda x:[i.replace(" ", "") for i in x])
+movies['keywords'] = movies['keywords'].apply(lambda x:[i.replace(" ", "") for i in x])
+movies['cast'] = movies['cast'].apply(lambda x:[i.replace(" ", "") for i in x])
+movies['crew'] = movies['crew'].apply(lambda x:[i.replace(" ", "") for i in x])
+
+# New Column combining overview, genres, keywords, cast and crew
+movies['tags'] = movies['overview'] + movies['genres'] + movies['keywords'] + movies['cast'] + movies['crew']
+
+# New data frame with only 3 data columns namely -> movie_id, title, tags
+new_df = movies[['movie_id', 'title', 'tags']]
+
+# Converting list of words in tags column to string format
+new_df['tags'] = new_df['tags'].apply(lambda x:" ".join(x))
+
+# Transforming all the data in tags column to lowercase
+new_df['tags'] = new_df['tags'].apply(lambda x:x.lower())
+
+
