@@ -1,7 +1,9 @@
 import numpy as np
 import pandas as pd
 import ast
-import nltk
+from nltk.stem.porter import PorterStemmer
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 movies = pd.read_csv('movie_recommender_system/tmdb_5000_movies.csv')
 credits = pd.read_csv('movie_recommender_system/tmdb_5000_credits.csv')
@@ -70,9 +72,8 @@ new_df['tags'] = new_df['tags'].apply(lambda x: " ".join(x))
 # Transforming all the data in tags column to lowercase
 new_df['tags'] = new_df['tags'].apply(lambda x: x.lower())
 
-
-from nltk.stem.porter import PorterStemmer
 ps = PorterStemmer()
+
 
 def stem(text):
     txt = []
@@ -81,5 +82,9 @@ def stem(text):
 
     return " ".join(txt)
 
+
 new_df['tags'] = new_df['tags'].apply(stem)
 
+cv = CountVectorizer(max_features=5000, stop_words='english')
+vectors = cv.fit_transform(new_df['tags']).toarray()
+similarity = cosine_similarity(vectors)
