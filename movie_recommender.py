@@ -21,3 +21,18 @@ def convert(obj):
 
 movies['genres'] = movies['genres'].apply(convert)
 movies['keywords'] = movies['keywords'].apply(convert)
+
+
+def convert3(obj):
+    L = []
+    counter = 0
+    for i in ast.literal_eval(obj):
+        if counter != 3:
+            L.append(i['name'])
+            counter += 1
+        else:
+            break
+    return L
+
+
+movies['cast'] = movies['cast'].apply(convert3)
