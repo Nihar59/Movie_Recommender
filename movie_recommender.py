@@ -103,5 +103,5 @@ def recommend(movie):
         print(new_df.iloc[i[0]].title)
 
 # Test Run
-movie = input(print("Enter Movie Name : "))
-recommend(movie)
+#movie = input(print("Enter Movie Name : "))
+#recommend(movie)
