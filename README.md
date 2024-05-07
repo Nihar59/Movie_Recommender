@@ -5,9 +5,7 @@ Here user is prompted to select a movie from given list of around 5000 movies. O
 
 Sample Output : 
 
-![Screenshot from 2024-05-06 22-10-48](https://github.com/Nihar59/Movie_Recommender/assets/69728446/88dc8f7b-5c24-4795-a72f-10a343c8b651)
-![Screenshot from 2024-05-06 22-11-35](https://github.com/Nihar59/Movie_Recommender/assets/69728446/d0ab283d-1a87-42d3-9058-77d2a0e889ad)
-![Screenshot from 2024-05-06 22-12-09](https://github.com/Nihar59/Movie_Recommender/assets/69728446/42b550e1-752b-4cf4-a6a4-e7e84fe5b149)
+[Screencast from 2024-05-07 17-12-17.webm](https://github.com/Nihar59/Movie_Recommender/assets/69728446/f2f13856-d3ea-46e9-96a0-be45a1e3ffda)
 
 
 How to use this program:
