@@ -5,7 +5,8 @@ Here user is prompted to select a movie from given list of around 5000 movies. O
 
 Sample Output : 
 
-[Screencast from 2024-05-07 17-12-17.webm](https://github.com/Nihar59/Movie_Recommender/assets/69728446/f2f13856-d3ea-46e9-96a0-be45a1e3ffda)
+![Sample Output](https://github.com/Nihar59/Movie_Recommender/assets/69728446/18804905-e339-483c-96f6-30684ba59f2b)
+
 
 
 How to use this program:
